@@ -8,3 +8,4 @@ jobs:
     steps:
       - run: pip --version
       - run: python --version
+      - run: flask --version
