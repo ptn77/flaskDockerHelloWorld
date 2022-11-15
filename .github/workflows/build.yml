@@ -1,7 +1,10 @@
+name: python continuous integration
 on: push
 jobs:
-  first_job: 
+  build-python:
+    name: Build python env 
     runs-on: ubuntu-latest
+    container: python:3.7
     steps:
-      - run: node --version
+      - run: pip --version
       - run: python --version
