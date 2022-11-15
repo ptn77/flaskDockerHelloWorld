@@ -10,3 +10,5 @@ jobs:
       - run: python --version
       - run: pip install flask
       - run: flask --version
+      - uses: actions/checkout@v3
+      - run: dir
