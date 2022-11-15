@@ -12,3 +12,5 @@ jobs:
       - run: flask --version
       - uses: actions/checkout@v3
       - run: dir
+      - run: export FLASK_APP='app.py'
+      - run: flask run
