@@ -1,12 +1,5 @@
 name: python continuous integration
-on:
-  push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
-
-permissions:
-  contents: read
+on: push
 jobs:
   build-python:
       runs-on: ubuntu-latest
