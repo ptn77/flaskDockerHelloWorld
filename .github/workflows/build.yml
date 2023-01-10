@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Download app contents
         uses: actions/download-artifact@v3
+      - name: cd to home
+        run: cd ~
       - name: view contents of artifacts
         run: ls -R
       - name: Archive the app contents
