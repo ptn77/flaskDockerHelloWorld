@@ -8,6 +8,17 @@ jobs:
     steps:
       - name: view contents of artifacts
         run: ls -R
+      - name: Archive Release
+        uses: thedoctor0/zip-release@main
+        with:
+          type: 'zip'
+          filename: 'release.zip'
+          exclusions: '*.git* /*node_modules/* .editorconfig'
+      - name: Upload Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "release.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Github release
         uses: actions/create-release@v1
         env:
@@ -29,15 +40,5 @@ jobs:
       - run: export FLASK_APP='app.py'
       # - name: Run the python application
         # run: python app.py
-      - name: Archive Release
-        uses: thedoctor0/zip-release@main
-        with:
-          type: 'zip'
-          filename: 'release.zip'
-          exclusions: '*.git* /*node_modules/* .editorconfig'
-      - name: Upload Release
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "release.zip"
-          token: ${{ secrets.GITHUB_TOKEN }}
+     
     
