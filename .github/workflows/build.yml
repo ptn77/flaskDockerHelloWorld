@@ -32,7 +32,7 @@ jobs:
           uses: docker/login-action@master
           with:
             username: ${{ SECRETS.DOCKER_USERNAME }}
-            password: ${{ SECRETS.DOCKER_PW }}
+            password: ${{ SECRETS.DOCKER_PASS }}
             
         - name: build and push to dockerhub
           uses: docker/build-push-action@master
