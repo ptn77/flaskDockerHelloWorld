@@ -31,8 +31,8 @@ jobs:
         - name: login to docker hub
           uses: docker/login-action@master
           with:
-            username: ${{ env.SECRETS.DOCKER_USERNAME }}
-            password: ${{ env.SECRETS.DOCKER_PASS }}
+            username: ${{ github.SECRETS.DOCKER_USERNAME }}
+            password: ${{ github.SECRETS.DOCKER_PASS }}
             
         - name: build and push to dockerhub
           uses: docker/build-push-action@master
